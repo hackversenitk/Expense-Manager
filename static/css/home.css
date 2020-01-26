@@ -1,0 +1,108 @@
+header {
+    text-align: center;
+}
+
+.add-users-section {
+  text-align: center;
+  width: 30%;
+  margin-left: 35em;
+  margin-top: 5em;
+  padding-left: 3em;
+  background-color: grey;
+}
+
+#bill-header {
+  background-color: black;
+  margin: 0;
+  width: 100%;
+}
+
+.add-users-section>.row>.col {
+    border: 1px solid black;
+    margin-left: 38%;
+    margin-top: 2em;
+    background-color: rgb(223, 219, 219);
+}
+
+#add-users-section-form {
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
+#getNumberOfUsers {
+    margin-bottom: 1em;
+    height: 4em;
+    width: 5em;
+    margin-top: 1em;
+    margin-left: 3em;
+    margin-right: 3em;
+    text-align: center;
+}
+
+#add-users-section-form>button {
+    border-radius: 0;
+}
+
+#nameOfBill {
+    width: 15em;
+    height: 2em;
+    padding-left: 1em;
+    margin-bottom: 2em;
+}
+
+
+/* User items consumed section */
+
+.user-items-consumed-section {
+    margin-top: 5em;
+    margin-left: 10em;
+}
+
+.col {
+    border: 1px solid black;
+    margin-bottom: 3em;
+    height: 20em;
+    width: 5em;
+}
+
+form>.row {
+    margin-bottom: 5em;
+}
+
+.form-group {
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+.item-name {
+    margin-left: 0em;
+}
+
+.person-name {
+    margin-top: 1em;
+}
+
+.plus {
+    border: 1px solid black;
+    margin-left: 1em;
+    margin-top: 0em;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.plus:hover {
+    background-color: black;
+}
+
+.minus {
+    margin-top: 1em;
+    border: 1px solid black;
+}
+
+.personExtras {
+    padding-left: 1em;
+}
+
+.personExtras>.row {
+    margin-bottom: 2em;
+}

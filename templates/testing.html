@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Add items</title>
+        <!-- <script type="text/javascript" src="{{ url_for('static', filename='testing.js')}}"></script> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../static/css/testing.css">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> -->
+        <!-- <script src="jquery-3.4.1.min.js"></script> -->
+        <!-- <script src="https://use.fontawesome.com/8cf2963f4e.js"></script> -->
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
+    <script>
+        window.addEventListener('load', function() {
+
+        const form = document.querySelector('form');
+        // const userInfoTable = form.querySelector('.person-info-table')
+
+        const createGroup = () => `
+            <div class="group">
+            <input type="text" name="item[]" placeholder="item">
+            <input type="text" name="price[]" placeholder="price">
+            <button class="remove" type="button" name="remove[]">Remove</button>
+            </div>
+        `;
+
+        // var y =2;
+        const userGroup = () => 
+            `<div class="person-info-table shadow">
+                <div class="items">
+                    <div class="person-name">
+                        <input type="text"  placeholder="Person1">
+                        <input type="text" name="initial_paid" placeholder="Amount Paid">
+                    </div>
+                    <button type="submit" name="submit" class="submit">Submit</button>
+                    <div class="group">
+                        <input type="text" name="i" placeholder="item" id="a">
+
+                        <input type="text" name="p" placeholder="price" id="b">
+                        <button class="remove" type="button" name="remove[]">Remove</button>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="add" type="button" name="add">Add Group</button>
+                </div>
+            </div>
+        `;
+
+        var i = 0;
+        var x = '{{ i }}';
+        for(i=0;i<x;i++) {
+            const group = userGroup();
+            form.insertAdjacentHTML("beforeend", group);
+            // document.getElementById("myBtn").name = "newButtonName";
+            // alert(document.getElementsByClassName("1").length)
+            // document.getElementById("1").name= "items"+str(i);
+            // var r =document.getElementById("1").name
+            // alert(r);
+            // if (document.getElementById("a").name=='i'){
+            //     document.getElementById("a").name = "it"+str(i);
+            //     document.getElementById("a").id = "it"+str(i);
+            // }
+
+
+            document.getElementById("a").name = "item"+i;
+            document.getElementById("a").id= "item"+i;
+            document.getElementById("b").name= "price"+i;
+            document.getElementById("b").id= "price"+i;
+            
+            // alert('1');
+        }
+
+
+        function insertItems(userInfoTable){
+            userInfoTable.addEventListener("click", function(event) {
+            const addButton = event.target.closest('.add');
+            const removeButton = event.target.closest('.remove');
+            const items = userInfoTable.querySelector(".items");
+            if(addButton !== null) {
+                const group = createGroup();
+                items.insertAdjacentHTML('beforeend', group);
+            }
+
+            removeButton.parentNode.parentNode.removeChild(removeButton.parentNode);
+            });
+        }
+
+
+        var i = 0;
+        const userInfoTable = document.getElementsByClassName("person-info-table");
+        // const items = userInfoTable.querySelector('.items');
+        var len = userInfoTable.length;
+
+
+        for( ; i < len ; i++){
+            insertItems(userInfoTable[i]);
+        }
+        // userInfoTable.addEventListener('click', function(event) {
+        //     const addButton = event.target.closest('.add');
+        //     const removeButton = event.target.closest('.remove');
+
+        //     if(addButton !== null) {
+        //         const group = createGroup();
+        //         items.insertAdjacentHTML('beforeend', group);
+        //     }
+
+        //    removeButton.parentNode.parentNode.removeChild(removeButton.parentNode);
+        // });
+
+
+        });
+
+    </script>
+    </head>
+    <body background="bgimage.jpg">
+        <div class="page-header">
+            <h1>BillSplit</h1>
+        </div>
+
+        <form class="form" method="post" action="">
+            <!-- <div class="person-info-table shadow">
+                <div class="items">
+                    <div class="person-name">
+                        <input type="text" placeholder="Person1">
+                        <input type="text" placeholder="Amount Paid">
+                    </div>
+                    <button type="submit" name="submit" class="submit">Submit</button>
+                    <div class="group">
+                        <input type="text" name="item[]" placeholder="item">
+                        <input type="text" name="price[]" placeholder="price">
+                        <button class="remove" type="button" name="remove[]">Remove</button>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="add" type="button" name="add">Add Group</button>
+                </div>
+            </div> -->
+        </form>
+    </body>
+</html>

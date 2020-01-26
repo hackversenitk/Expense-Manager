@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Introduction to Flask</title>
+            <link rel = "stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+        </head>
+
+        <body>
+            <header>
+                <nav class="navbar navbar-inverse">
+                    <div class="navbar-inner">
+                        <a class="brand" href="/">Real Python</a>
+                        <ul class="nav">
+                            <li class="active"><a href="/">Home</a></li>
+                            <li><a href="/welcome">Welcome</a></li>
+                            <li><a href="/log">Login</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <div class = "container">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </body>
+        
+    </html>

@@ -1,0 +1,39 @@
+<head>
+    <script>
+
+
+    function generate() {
+
+        var a = parseInt(document.getElementById("nochapter").value);
+        var ch = document.getElementById("ch");
+
+        for (i = 0; i < a; i++) {
+            var input = document.createElement("input");
+            ch.innerHTML += "user"+(i+1)
+            ch.appendChild(input);
+            ch.innerHTML +="<br>";
+            
+        }
+        var btn = document.createElement("button");
+        btn.innerHTML = "add";
+        ch.appendChild(btn);
+        btn.onclick = function(){
+            var inpt = document.createElement("input");
+            ch.appendChild(inpt)
+            // alert('box added');
+            return false;
+        };
+    }
+
+    </script>
+</head>
+
+<body>
+    <h1> BillSplit</h1>
+    <form>
+        No. of Users
+        <input type="text" id="nochapter" />
+        <input type="button" value="set" onclick="generate()" />
+        <div id="ch"></div>
+    </form>
+</body>

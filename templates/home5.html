@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <title>Bill Split Home Page</title>
+    <script src="../static/css/home.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <script src="jquery-3.4.1.min.js"></script>
+    <!-- <script src="https://use.fontawesome.com/8cf2963f4e.js"></script> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+    <body background="bgimage.jpg">
+        <header class="page-header">
+            <h1>Bill Split</h1>
+        </header>
+        <div class="add-users-section">
+          <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2 id="bill-header">Start a new bill</h2>
+                    <form action="" method="post" id="add-users-section-form" onsubmit="submitBillNameUsers()">
+                        <h3>How many people were a part of this trip?</h3>
+                        <!-- nochapter = getNumberOfUsers -->
+                        <button type="button" class="btn btn-primary btn-lg" onclick="increment()">+</button>
+                        <input type="text" name="getNumberOfUsers" id="getNumberOfUsers" value="2"/>
+                        <button type="button" class="btn btn-primary btn-lg" onclick="decrement()">-</button> <br>
+                        <h4>Let's name the Bill!</h4>
+                        <input type="text" id="nameOfBill" name="nameOfBill" placeholder="e.g. Dominos Lunch"><br>
+                        <input type="submit" class="btn btn-info submit-btn" value="Let's Start" />
+                        <!-- <div id="ch"></div> -->
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
+    </body>
+</html>
